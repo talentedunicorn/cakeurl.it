@@ -35,5 +35,5 @@ class AppController extends Controller {
 	public $components = array('DebugKit.Toolbar');
 
 	// Load common helpers
-	public $helpers = array('Html', 'Form');
+	public $helpers = array('Html', 'Form', 'Session');
 }
