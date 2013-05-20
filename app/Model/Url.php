@@ -11,7 +11,7 @@ class Url extends AppModel {
 	public $validate = array(
 		'link' => array(
 			'rule' => array('url', true),
-			'message' => 'Enter a valid URL' 
+			'message' => 'Please enter a valid URL e.g. http://www.example.com OR http://example.com' 
 		)
 	);
 
@@ -65,13 +65,22 @@ class Url extends AppModel {
 
 
 	/**
-	 * Get Url
+	 * Get Short Code
 	 * 
-	 * @return MD5 
+	 * @return string
 	 */
 	function getUrl($md5) {
 		$shortUrl = $this->field('short', array('unique' => $md5));
 		return $shortUrl;
+	}
+
+	/**
+	 * Get full URL
+	 * 
+	 * @return string
+	 */
+	function getFullUrl($shorturl) {
+		return $this->field('link', array('short' => $shorturl));
 	}
 
 }
