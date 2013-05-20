@@ -28,6 +28,13 @@
  */
 	// Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
 	Router::connect('/', array('controller' => 'Urls', 'action' => 'index'));
+	Router::connect('/urls', array('controller' => 'Urls', 'action' => 'index'));
+
+/**
+* Route redirected short urls
+*
+*/	
+	Router::connect('/:shorturl', array('controller' => 'urls', 'action' => 'redirectMe'), array('pass' =>array('shorturl')));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
