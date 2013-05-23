@@ -13,6 +13,5 @@ Install instructions
 
 To improve
 ---------
-* Automatically add protocol to URLs submitted 
-* Recognize links submitted without "www" prefix
+* Add link status checking before creating shortlinks
 * Improve UI
